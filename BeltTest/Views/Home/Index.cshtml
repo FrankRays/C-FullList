@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Wicked Awesome Auction Site</h1>
+<div class="forms">
+    @Html.Partial("loginpartial")
+</div>
+@{
+    if(ViewBag.error != null){
+        <p style="color:red;">@ViewBag.error</p>
+    }
+}
+<div class="forms">
+    @Html.Partial("registerpartial")
+</div>

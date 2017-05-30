@@ -1,0 +1,33 @@
+/*Write all of your CSS here*/
+img{
+    margin:auto;
+    width:250px;
+    height:250px;
+    text-align: center;
+}
+#display{
+    margin:auto;
+    text-align: center;
+    border:1px solid black;
+    padding:2em;
+    width:50em;
+    height:25em;
+    
+}
+#status{
+    margin:5em;
+    position: relative;
+    left:25%;
+}
+#actions{
+    margin:5em;
+    position: relative;
+    left:25%;
+}
+ul{
+    list-style:none;
+    
+}
+li{
+    display:inline;
+}

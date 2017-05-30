@@ -1,0 +1,42 @@
+@model IEnumerable<BeltTest.Models.Auction>
+@{
+    ViewData["Title"] = "Current Auctions";
+}
+
+<div id="head">
+    <ul>
+        <li><h2>Current Auctions</h2></li>
+        <li>Hello, @ViewData["user"]</li>
+    </ul>
+</div>
+<table style="width:100%;">
+    <tr>
+        <th>Product</th>
+        <th>Seller</th>
+        <th>Top Bid</th>
+        <th>Time Remaining</th>
+        <th></th>
+    <tr>
+    @foreach (var auction in Model){
+        @if(auction.active == 1){
+        <tr>
+        <td><a href="bid/@auction.id">@auction.product</a></td>
+        <td>@auction.poster.fname</td>
+        <td>@auction.bid</td>
+        @{
+                TimeSpan delta = @auction.end_date.Subtract(DateTime.Now);
+        }
+        <td>@delta</td>
+        @if(auction.poster.id == (int) @ViewData["id"] ){
+            <td><a href="delete/@auction.id">Delete</td>
+        }
+        </tr>
+        }
+    }
+    </table>
+    <div id="bottom">
+        <ul>
+            <li><a href="new"><button>New Auction</button></a></li>
+            <li>Your Current Wallet: $@ViewData["wallet"]</li>
+        </ul>
+    </div>

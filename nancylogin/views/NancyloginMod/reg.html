@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <form action="/register" method="POST">
+    <ul>@If.Context.ViewBag.nameerror
+        <li style="color:red;">Please enter a valid name</li>
+        @EndIf
+    <li><h2>First Name : </h2> <input type="text" name="fname"></li>
+    <li><h2>Last Name : </h2> <input type="text" name="fname"></li>
+    @If.Context.ViewBag.emailerror
+        <li style="color:red;">Please enter a valid email</li>
+        @EndIf
+    <li><h2>Email : </h2> <input type="text" name="email"></li>
+    @If.Context.ViewBag.passcounterror
+        <li style="color:red;">Please enter a valid password of 8 characters or more.</li>
+        @EndIf
+    <li><h2>Password : </h2><input type="password" name="password"></li>
+    <li><h2>Verify Password : </h2><input type="password" name="password2"></li>
+    @If.Context.ViewBag.passerror
+        <li style="color:red;">Passwords must match.</li>
+        @EndIf
+    <li><input type="submit" value="Create new account"></form></li>
+    </ul>
+    </form>
+</body>
+</html>

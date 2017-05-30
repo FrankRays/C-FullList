@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "PikaDachi";
+}
+<div id="status"><ul>
+    <li>Fullness: @ViewBag.fullness</li>
+    <li>Happiness: @ViewBag.happiness</li>
+    <li>Meals: @ViewBag.meals</li>
+    <li>Energy: @ViewBag.energy</li>
+    </ul>
+</div>
+<div id="display">
+    <img src=@ViewBag.img alt="pika pika">
+    <p>@ViewBag.message</p>
+</div>
+
+<div id="actions">
+    <ul>
+        @{
+            if(ViewBag.dead == false && ViewBag.win == false){
+                <li><a href="/feed"><button>Feed</button></a></li>
+                <li><a href="/play"><button>Play</button></a></li>
+                <li><a href="/work"><button>Work</button></a></li>
+                <li><a href="/sleep"><button>Sleep</button></a></li>
+            }
+            else{
+                <li><a href="/reset"><button>Reset</button></a></li>
+            }
+        }
+    </ul>
+</div>

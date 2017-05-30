@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="title"><h3>Random Word (attempted #@ViewBag.attempt)</h3></div>
+    <div id="random">
+        <h2>@ViewBag.word</h2>
+    </div>
+    <a href="/randomize"><button>Generate</button></a>
+</body>
+</html>

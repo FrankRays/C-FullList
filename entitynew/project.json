@@ -1,0 +1,17 @@
+{
+    "dependencies": {
+        "Microsoft.NETCore.App": {
+            "version": "1.0.0",
+            "type": "platform"
+        },
+        //This is our only new dependency
+        "MySql.Data.EntityFrameworkCore": "7.0.5-ir21"
+    },
+    "frameworks": {
+        "netcoreapp1.0": {}
+    },
+      "buildOptions": {
+   
+    "emitEntryPoint": true
+  } 
+}

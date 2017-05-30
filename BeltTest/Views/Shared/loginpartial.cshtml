@@ -1,0 +1,15 @@
+@model BeltTest.Models.LoginViewModel
+
+<h3>Login</h3>
+
+<form asp-controller="Home" asp-action="Login" method="POST">
+    <div>
+    <ul>
+    <li><label asp-for="username"> User Name: </label>
+    <input asp-for="username"/></li>
+    <li><label asp-for="password">Password: </label>
+    <input asp-for="password"/></li>
+    <li><div style="color:red;" asp-validation-summary="All"></div></li></ul></div>
+    <button type="submit">Login</button>
+</form>
+

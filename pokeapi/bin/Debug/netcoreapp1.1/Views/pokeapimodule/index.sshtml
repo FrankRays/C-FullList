@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PokeApi</title>
+    <link rel="stylesheet" href="Content/style.css"/>
+</head>
+<body>
+    <h1>Name : @ViewBag.name</h1>
+    <h2>Type : @ViewBag.typename</h2>
+    <h3>Height : @ViewBag.height</h3>
+    <h3>Weight : @ViewBag.weight</h3>
+    <a href="/random"><button>Random Pokemon</button></a>    
+</body>
+</html>

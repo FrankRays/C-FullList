@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuotingDojo</title>
+</head>
+<body>
+    <h1>Here are the awesome quotes!</h1>
+    <ul>
+        @Each
+        <li><q>@Current.quote</q></li>
+        <li style="position:relative; left:4em;">-@Current.username at @Current.created_at</li>
+        <hr>
+        @EndEach
+    </ul>
+</body>
+</html>

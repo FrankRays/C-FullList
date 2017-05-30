@@ -1,0 +1,14 @@
+/*Write all of your CSS here*/
+
+.forms ul{
+    list-style: none;
+}
+.forms {
+    width:40%;
+    height:50%;
+    margin: 2em;
+    border:1px solid black;
+    border-radius: 2px;
+    padding:1em;
+    display:inline-block;
+}

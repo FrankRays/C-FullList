@@ -1,0 +1,16 @@
+@model beltReviewer.Models.RegisterViewModel
+
+<h3>Registration</h3>
+<ul>
+<form asp-action="register" method="POST">
+    <li><label asp-for="username">Username: </label>
+    <input asp-for="username"/></li>
+    <li><label asp-for="email">Email Address: </label>
+    <input asp-for="email"/></li>
+    <li><label asp-for="password">Password: </label>
+    <input asp-for="password"/></li>
+    <li><label asp-for="passwordconfirmation">Confirm Password: </label>
+    <input asp-for="passwordconfirmation"/></li>
+    <li><button type="submit">Register</button></li>
+</form>
+<div style="color:red;" asp-validation-summary="All"></div>

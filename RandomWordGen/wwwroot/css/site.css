@@ -1,0 +1,15 @@
+/*Write all of your CSS here*/
+
+.title{
+    text-align: center;
+    width:100%;
+    height:2em;
+}
+
+#random{
+    width:80%;
+    margin:auto;
+    text-align: center;
+    height:6em;
+    border:1px solid black;
+}

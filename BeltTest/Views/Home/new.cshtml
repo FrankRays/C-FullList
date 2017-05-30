@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Create a new listing";
+}
+@model BeltTest.Models.AuctionViewModel
+<div id="head">
+    <ul>
+        <li><h2>New Auction</h2></li>
+        <li><a href="dashboard">Home</a></li>
+        <li><a href="logout">Logout</a></li>
+    </ul>
+</div>
+
+<form asp-controller="Home" asp-action="processNew" method="POST">
+    <div class="left">
+        <ul>
+            <li><label asp-for="product">Product Name</label></li>
+            <li><input asp-for="product"/></li>
+            <li><label asp-for="description">Description</label></li>
+            <li><textarea asp-for="description"></textarea></li>
+            <li><button type="submit">Create Auction</button></li>
+        </ul>
+    </div>
+    <div class="right">
+        <ul>
+            <li><label asp-for="bid">Starting Bid</label></li>
+            <li><input type="number" min="1.0" step=".50" max="1000" asp-for="bid"/></li>
+            <li><label asp-for="end_date">End Date</label></li>
+            <li><input type="date" asp-for="end_date"/></li>
+        </ul>
+    </div>
+</form>
+
+

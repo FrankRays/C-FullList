@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "The Wall!";
+    
+}
+
+@Html.Partial("loginpartial")
+
+<div class="mainpost">
+<form action="processPost" method="POST" id="wallpost">
+    <label>Post to the Wall:</label>
+    <textarea name="content" id="wallpost" cols="30" rows="10"></textarea>
+    <input type="hidden" value=@ViewBag.User.id name="User_id">
+    <input type="submit" value="Post"></form>
+</div>
+<div class="errors">
+@{
+        
+        if(ViewBag.errors != null ){
+        foreach(var error in ViewBag.errors){
+            if(@error == "The field firstname must be a string or array type with a minimum length of '3'."){
+                <p>First name must contain more than 2 characters.</p>
+            }
+            else if(@error == "The field lastname must be a string or array type with a minimum length of '3'."){
+                <p>Last name must contain more than 2 characters.</p>
+            }
+            else if(@error =="The field password must be a string or array type with a minimum length of '8'."){
+                <p>Password must consist of more than 7 characters.</p>
+            }
+            else{
+                <p>@error</p>
+            }
+        }
+        }
+    }
+    </div>
+<div id="wall">
+    <ul>
+@{
+    if(ViewBag.messages != null){
+        foreach (var message in ViewBag.messages){
+            if(@message.content != null){
+                <li>@message.name | Created on : @message.created_at</li>
+                <li>@message.content</li>
+                if(@message.User_id == ViewBag.id){
+                    <form action="removePost" method="post">
+                    <input type="hidden" value=@message.id>
+                    <input type="submit" value="Delete">
+                    </form>
+                }
+                <li><hr></li>
+                if(ViewBag.comments != null){
+                foreach(var comment in ViewBag.comments){
+                    if(@comment != null){                        
+                        <ul>
+                            if(@comment.p_id == @message.id){
+                            <li>@comment.User.posted_by | Created on : @comment.created_at</li>
+                            <li>@comment.content</li>
+                            <hr>
+                            }
+                        </ul>
+                        }
+                }
+                }
+            }
+        else{
+            <li>No messages yet!</li>
+        }
+    }
+    }
+}
+    
+</div>

@@ -1,0 +1,26 @@
+@model BeltTest.Models.RegisterViewModel
+
+<h3>Registration</h3>
+
+<form asp-controller="Home" asp-action="Register" method="POST">
+    <div class="left">
+        <ul>
+            <li><label asp-for="username">Username: </label>
+            <input asp-for="username"/></li>
+            <li><label asp-for="password">Password: </label>
+            <input asp-for="password"/></li>
+            <li><label asp-for="passwordconfirmation">Confirm Password: </label>
+            <input asp-for="passwordconfirmation"/></li>
+        </ul>
+    </div>
+    <div class="right">
+        <ul>
+            <li><label asp-for="fname">First Name: </label>
+            <input asp-for="fname"/></li>
+            <li><label asp-for="lname">Last Name: </label>
+            <input asp-for="lname"/></li>
+            <li><button type="submit">Register</button></li>
+        </ul>
+    </div>
+</form>
+<div style="color:red;" asp-validation-summary="All"></div>

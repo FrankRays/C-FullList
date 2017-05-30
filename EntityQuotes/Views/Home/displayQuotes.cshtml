@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Dojo Quotes";
+}
+@model IEnumerable<EntityQuotes.Models.Quote>
+
+<h2>Here are the awesome quotes!</h2>
+<ul>
+    @{
+        foreach (var quotes in Model){
+            
+            if(@quotes.quote != null){
+                <li>@quotes.username</li>
+                <li>@quotes.quote | Created on : @quotes.created_at</li>
+                <hr>
+            }
+            else{
+                <li>No quotes yet!</li>
+            }
+        }
+    }
+</ul>
+<a href="/">Go back</a>

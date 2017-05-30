@@ -1,0 +1,13 @@
+@model beltReviewer.Models.LoginViewModel
+
+<h3>Login</h3>
+<ul>
+<form asp-action="login" method="POST">
+    <li><label asp-for="email"> Email Address: </label>
+    <input asp-for="email"/></li>
+    <li><label asp-for="password">Password: </label>
+    <input asp-for="password"/></li>
+    <li><button type="submit">Register</button></li>
+</form>
+<li><div style="color:red;" asp-validation-summary="All"></div></li>
+</ul>

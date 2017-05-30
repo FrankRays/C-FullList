@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Dojo Quotes";
+}
+
+<h2>Here are the awesome quotes!</h2>
+<ul>
+    @{
+        foreach (var quotes in ViewBag.quotes){
+            
+            if(@quotes.quote != null){
+                <li>@quotes.username</li>
+                <li>@quotes.quote | Created on : @quotes.created_at</li>
+                <hr>
+            }
+            else{
+                <li>No quotes yet!</li>
+            }
+        }
+    }
+</ul>
+<a href="/">Go back</a>

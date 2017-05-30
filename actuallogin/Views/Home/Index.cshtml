@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Login";
+}
+<div id="form">
+    <h1>Welcome to C# ASP/.Net Login!</h1>
+    <h3>Please Login</h3>
+        <ul>
+            <form action="login" method="POST">
+            <li>Email: <input type="email" name="email"></li>
+            <li>Password: <input type="password" name="password"></li>
+            <li><input type="submit" value="Submit"></li></ul></form>
+            <li><a href="register">Or Register a new account</a></li>
+        </ul>
+    </div>
+    <div class="error">
+    @{
+        if(ViewBag.nologin != null){
+            <p>@ViewBag.nologin</p>
+        }
+        if(ViewBag.errors != null ){
+        foreach(var error in ViewBag.errors){
+            <p>@error</p>
+            }
+        }
+    }
+</div>

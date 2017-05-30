@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginDojo</title>
+</head>
+<body>
+    <h1>Successful login</h1>
+    <ul>
+        @Each
+        <li><q>@Current.fname</q></li>
+        <li>Good job logging in!</li>
+        <hr>
+        @EndEach
+    </ul>
+</body>
+</html>

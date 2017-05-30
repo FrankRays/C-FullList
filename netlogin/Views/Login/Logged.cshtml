@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Results</title>
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+<body>
+    <div id="form">
+        <h3>Submitted Info</h3>
+        <ul>
+            <li>Name: <span>@ViewBag.name</span></li>
+            <li>Dojo Location: <span>@ViewBag.location</span></li>
+            <li>Favorite Language: <span>@ViewBag.language</span></li>
+            <li>Comment: <span>@ViewBag.comment</span></li>
+        
+            <a href="/"><button>Go Back</button></a>
+        </ul>
+    </div>
+    
+</body>
+</html>

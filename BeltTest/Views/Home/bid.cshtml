@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Create a new listing";
+}
+@model BeltTest.Models.BidAuctionViewModel
+<div id="head">
+    <ul>
+        <li><h2>@ViewData["current"].product</h2></li>
+        <li>Created by: @ViewData.current.poster.fname</li>
+        <li>Your Wallet : $@ViewData.user.wallet</li>
+        <li><a href="dashboard">Home</a></li>
+        <li><a href="logout">Logout</a></li>
+    </ul>
+</div>
+<ul>
+    @{
+        TimeSpan delta = @ViewData.current.end_date.Subtract(DateTime.Now);
+    }
+    <li>Time Remaining: @delta</li>
+    <li>@ViewData.current.description</li>
+    <div class="left">
+    <li>Current Highest Bid :</li>
+    <li>$@ViewData.current.bid</li>
+    </div>
+</ul>
+<div class="right">
+    <ul>
+        <li>By @ViewData.current.highest_bidder.fname</li>
+        <form asp-action="bid/@ViewData.current.id" method="POST">
+        <li><label asp-for="bid">Your bid here...</label></li>
+        @{
+            var min_bid = @ViewData.current.bid + 1;
+            var max_bid = @ViewData.user.wallet;
+        }
+        <li><input asp-for="bid" type="number" min="@min_bid" max="@max_bid" step="0.5"/></li>
+        <li><button type="submit">Bid!</button></li>
+        @{
+    if(ViewData.error != null){
+        <li style="color:red;">@ViewData.error</li>
+    }
+}
+        </form>
+    </ul>
+</ul>
